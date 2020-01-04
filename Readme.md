@@ -23,10 +23,10 @@ For example we may want the script which is writing log messages to the disk to 
 In this setup, we can see the direct exchange X with two queues bound to it.
 The first queue is bound with binding key orange, and the second has two bindings, one with binding key black and the other one with green.
 
-				 ------ orange ----> Q1 -----> C1
+		     ------ orange ----> Q1 -----> C1
 	P -------> X ------ black ----->
-									 Q2 -----> C2
-				 ------ green ----->
+					 Q2 -----> C2
+		     ------ green ----->
 
 In such a setup a message published to the exchange X with a routing key orange will be routed to queue Q1.
 Messages with a routing key of black or green will go to Q2. All other messages will be discarded.
