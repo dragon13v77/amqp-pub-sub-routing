@@ -42,7 +42,6 @@ A message with routing key black will be delivered to both Q1 and Q2.
 				 ------ green -----> Q2 -----> C2
 
 
-
 #publish(exchange, routingKey, content, [options])
 Publish a single message to an exchange. The mandatory parameters are:
 
