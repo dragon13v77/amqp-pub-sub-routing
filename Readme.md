@@ -37,9 +37,9 @@ In our example we could add a binding between X and Q1 with binding key black.
 In that case, the direct exchange will behave like fanout and will broadcast the message to all the matching queues.
 A message with routing key black will be delivered to both Q1 and Q2.
 
-				 ------ black -----> Q1 -----> C1
-	P -------> X
-				 ------ green -----> Q2 -----> C2
+		    ------ black -----> Q1 -----> C1
+        P -------> X
+		    ------ green -----> Q2 -----> C2
 
 
 #publish(exchange, routingKey, content, [options])
