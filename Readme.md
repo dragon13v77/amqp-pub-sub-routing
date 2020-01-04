@@ -36,7 +36,8 @@ A message with routing key black will be delivered to both Q1 and Q2.
 
 ![Alt text](./assets/schema2.jpg)
 
-#####publish(exchange, routingKey, content, [options])
+`publish(exchange, routingKey, content, [options])`
+
 Publish a single message to an exchange. The mandatory parameters are:
 
 - exchange and routingKey: the exchange and routing key, which determine where the message goes.
