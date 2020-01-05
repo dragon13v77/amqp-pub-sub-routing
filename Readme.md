@@ -1,16 +1,19 @@
 # AMQP Publish Subscribe with Routing
 
+In the [previous tutorial](https://github.com/dragon13v77/amqp-pub-sub) we built a simple logging system. We were able to broadcast log messages to many receivers.
+
 In this tutorial we're going to make it possible to subscribe only to a subset of the messages.
 For example, we will be able to direct only critical error messages to the log file (to save disk space), while still being able to print all of the log messages on the console.
 
+### Bindings
+
 In previous examples we were already creating bindings. You may recall code like:
-channel.bindQueue(q.queue, exchange, '');
+`channel.bindQueue(q.queue, exchange, '')`
 
 A binding is a relationship between an exchange and a queue. This can be simply read as: the queue is interested in messages from this exchange.
 
-
 Bindings can take an extra binding key parameter (the empty string in the code above). This is how we could create a binding with a key:
-channel.bindQueue(queue_name, exchange_name, 'black');
+`channel.bindQueue(queue_name, exchange_name, 'black')`
 
 The meaning of a binding key depends on the exchange type. The fanout exchanges, which we used previously, simply ignored its value.
 
@@ -47,4 +50,9 @@ sendToQueue below is equivalent to this special case. If the named exchange does
 - content: a buffer containing the message content. This will be copied during encoding, so it is safe to mutate it once this method has returned.
 
 -----
+To test start one or more log receivers
+`node subscribe`
+Then publish some logs
+`node publish error "My log error"`
+
 Detail tutorial can be found here https://www.rabbitmq.com/tutorials/tutorial-four-javascript.html
